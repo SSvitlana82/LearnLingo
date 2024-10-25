@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { object, string } from "yup";
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations";
+import { userSignIn } from "../../redux/auth/operations";
 import css from "./LoginForm.module.css";
 
 const LoginForm = () => {
@@ -13,7 +13,7 @@ const LoginForm = () => {
   });
   const handleSubmit = (values, options) => {
     options.resetForm();
-    dispatch(logIn(values));
+    dispatch(userSignIn(values));
   };
   return (
     <div>

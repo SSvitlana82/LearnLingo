@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const AppBar = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoggedIn = false; /* useSelector(selectIsLoggedIn); */
   return (
     <header className={css.header}>
       <Navigation />

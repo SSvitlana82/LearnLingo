@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn, logOut, refreshUser } from "./operations";
+import { userSignUp, userSignIn, userLogOut } from "./operations";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const onRejected = (state, action) => {
-  state.isRefreshing = false;
+  state.isLoading = false;
   if (action.payload === "Unable to fetch user") {
     return;
   }
@@ -27,39 +27,31 @@ const authSlice = createSlice({
       name: null,
       email: null,
     },
-    token: null,
+
     isLoggedIn: false,
-    isRefreshing: false,
+    isLoading: false,
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+      .addCase(userSignUp.fulfilled, (state, action) => {
+        state.user = action.payload;
+
         state.isLoggedIn = true;
       })
-      .addCase(logIn.fulfilled, (state, action) => {
+      .addCase(userSignIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        state.token = action.payload.token;
+
         state.isLoggedIn = true;
       })
-      .addCase(logOut.fulfilled, (state) => {
+      .addCase(userLogOut.fulfilled, (state) => {
         state.user = { name: null, email: null };
-        state.token = null;
+
         state.isLoggedIn = false;
       })
-      .addCase(refreshUser.fulfilled, (state, action) => {
-        state.user = action.payload;
-        state.isLoggedIn = true;
-        state.isRefreshing = false;
-      })
-      .addCase(register.rejected, onRejected)
-      .addCase(logIn.rejected, onRejected)
-      .addCase(logOut.rejected, onRejected)
-      .addCase(refreshUser.rejected, onRejected)
-      .addCase(refreshUser.pending, (state) => {
-        state.isRefreshing = true;
-      });
+
+      .addCase(userSignUp.rejected, onRejected)
+      .addCase(userSignIn.rejected, onRejected)
+      .addCase(userLogOut.rejected, onRejected);
   },
 });
 export const authReducer = authSlice.reducer;
