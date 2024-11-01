@@ -34,7 +34,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/teachers" element={<TeachersPage />} />
         <Route
-          path="/registration"
+          path="/register"
           element={
             <RestrictedRoute
               redirectTo="/favorites"

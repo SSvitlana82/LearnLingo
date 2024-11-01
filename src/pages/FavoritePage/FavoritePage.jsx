@@ -1,4 +1,4 @@
-import style from "./FavoritPage.module.css";
+import css from "./FavoritePage.module.css";
 import { useState } from "react";
 
 const FavoritPage = ({}) => {

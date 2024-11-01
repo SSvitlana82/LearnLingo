@@ -1,11 +1,51 @@
+.navigation {
+  width: 1184px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 48px;
+}
+
+/* .conteinerNav {
+  display: flex;
+  width: 661px;
+  height: 28px;
+  justify-content: space-between;
+  align-items: center;
+} */
 .link {
+  width: 138px;
   display: inline-block;
   text-decoration: none;
-  padding: 12px;
-  font-weight: 700;
-  color: #2a363b;
+  color: rgba(18, 20, 23, 1);
+  font-size: 16px;
+  justify-content: space-between;
 }
 
 .link.active {
   color: #e84a5f;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.logoIcon {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(
+    to top,
+
+    rgba(255, 218, 68, 1) 50%,
+    rgba(51, 138, 243, 1) 50%
+  );
+}
+.logoName {
+  color: rgba(18, 20, 23, 1);
+  font-size: 20px;
+  font-weight: 500;
 }
