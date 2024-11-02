@@ -9,26 +9,28 @@
 
 /* .conteinerNav {
   display: flex;
-  width: 661px;
+  width: 133px;
   height: 28px;
   justify-content: space-between;
   align-items: center;
 } */
 .link {
-  width: 138px;
-  display: inline-block;
+  /* display: inline-block; */
   text-decoration: none;
   color: rgba(18, 20, 23, 1);
   font-size: 16px;
   justify-content: space-between;
 }
 
-.link.active {
+/* .link.active {
   color: #e84a5f;
-}
+} */
 
 .logo {
   display: flex;
+  width: 133px;
+  height: 28px;
+  justify-content: space-between;
   align-items: center;
   gap: 5px;
 }
@@ -43,9 +45,25 @@
     rgba(255, 218, 68, 1) 50%,
     rgba(51, 138, 243, 1) 50%
   );
+  margin: 0;
 }
 .logoName {
+  display: flex;
+  width: 97px;
+  height: 24px;
   color: rgba(18, 20, 23, 1);
   font-size: 20px;
   font-weight: 500;
+  align-items: center;
+  margin: 0;
+}
+
+.conteinerHome {
+  display: flex;
+  align-items: center;
+
+  width: 138px;
+  height: 20px;
+  font-size: 16px;
+  gap: 28px;
 }

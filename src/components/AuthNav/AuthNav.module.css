@@ -1,7 +1,7 @@
 .navAuth {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 255px;
   justify-content: space-between;
   height: 48px;
 }
@@ -14,7 +14,15 @@
   font-size: 16px;
   font-weight: 700px;
 }
+.icon {
+  width: 20px;
+  height: 20px;
+  color: rgba(244, 197, 80, 1);
+  border: 2px;
+  fill: rgba(244, 197, 80, 1);
+}
 
-.link.active {
+/* .link.active {
   color: #e84a5f;
 }
+ */
