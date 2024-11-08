@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button/Button";
 import DocumentTitle from "../../components/DocumentTitle";
 import css from "./HomePage.module.css";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/teachers");
+  };
   return (
     <div>
       <DocumentTitle>Home</DocumentTitle>
@@ -16,17 +22,13 @@ const HomePage = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </p>
-          <button>Get started</button>
+          <Button onClick={handleClick} className={css.button}>
+            Get started
+          </Button>
         </div>
         <div className={css.sectionFoto}>
           <img src="/src/assets/block.svg" alt="teachers description"></img>
         </div>
-        {/* <h1 className={css.title}>
-          PHONEBOOK{" "}
-          <span role="img" aria-label="Greeting icon">
-            💁‍♀️
-          </span>
-        </h1> */}
       </div>
       <div></div>
       <div></div>

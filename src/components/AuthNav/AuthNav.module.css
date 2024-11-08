@@ -17,9 +17,11 @@
 .icon {
   width: 20px;
   height: 20px;
-  color: rgba(244, 197, 80, 1);
   border: 2px;
   fill: rgba(244, 197, 80, 1);
+
+  stroke: rgba(244, 197, 80, 1);
+  position: relative;
 }
 
 /* .link.active {

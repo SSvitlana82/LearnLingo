@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import css from "./Navigation.module.css";
 import { AuthNav } from "../AuthNav/AuthNav";
+import Icon from "../Icon/Icon";
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -12,9 +13,7 @@ export const Navigation = () => {
       {/* <div className={css.conteinerNav}> */}
       <NavLink to="/teachers" className={css.link}>
         <div className={css.logo}>
-          <svg className={css.logoIcon}>
-            <use xlink:href="#icon-ukraine"></use>
-          </svg>
+          <Icon id="ukraine" className={css.logoIcon}></Icon>
           <h6 className={css.logoName}>LearnLingo</h6>
         </div>
       </NavLink>

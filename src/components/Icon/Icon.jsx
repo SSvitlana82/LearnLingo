@@ -1,6 +1,6 @@
 import iconSVG from "../../assets/symbol-defs.svg";
 
-const Icon = ({ id, width = 28, height = 28, className = "" }) => {
+const Icon = ({ id, width = 0, height = 0, className = "" }) => {
   return (
     <svg
       className={`${className}`}
