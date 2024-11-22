@@ -8,7 +8,7 @@ const Teachers = ({ teachers }) => {
       <ul className={css.list}>
         {teachers.map((teacher, index) => {
           return (
-            <li key={index}>
+            <li key={teacher.id}>
               <TeacherCard data={teacher} />
             </li>
           );

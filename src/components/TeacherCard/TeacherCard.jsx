@@ -1,6 +1,10 @@
 import css from "./TeacherCard.module.css";
 import { useState } from "react";
 import { VscCircleSmallFilled } from "react-icons/vsc";
+import ReviewsList from "../ReviewsItem/ReviewsList/ReviewsList";
+import { IoBookOutline } from "react-icons/io5";
+import { FaStar } from "react-icons/fa6";
+import Heart from "../Heart/Heart";
 
 const TeacherCard = ({ data }) => {
   console.log(data);
@@ -15,7 +19,22 @@ const TeacherCard = ({ data }) => {
         <VscCircleSmallFilled className={css.point} />
       </div>
       <div>
-        <div>Info</div>
+        <div>
+          <p>Languages</p>
+          <div>
+            <p>
+              <IoBookOutline />
+              Lessons online
+            </p>
+            <p>Lessons done: {data.lessons_done}</p>
+            <p>
+              <FaStar />
+              Rating: {data.rating}
+            </p>
+            <p>Price / 1 hour: {data.price_per_hour}$</p>
+            <Heart data={data} /> // TODO для того щоб взяти id
+          </div>
+        </div>
         <div>
           <div>
             <h2>{data.name}</h2>
@@ -30,6 +49,7 @@ const TeacherCard = ({ data }) => {
               <span>{data.conditions}</span>
             </p>
             {isOpened && <p>{data.experience}</p>}
+            {isOpened && <ReviewsList reviews={data.reviews} />}
           </div>
 
           <div>

@@ -1,4 +1,5 @@
 import techersReducer from "./teachers/slice";
+import favoriteSlice from "./favorites/slice";
 import { filtersReduser } from "./filters/filtersSlice";
 import { authReducer } from "./auth/slice";
 import { configureStore } from "@reduxjs/toolkit";
@@ -24,6 +25,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     teachers: techersReducer,
+    favorite: favoriteSlice,
     filters: filtersReduser,
   },
   middleware: (getDefaultMiddleware) =>

@@ -17,10 +17,12 @@ import {
 
 // CREATE: Function to add a new teacher
 export async function addTeacherFavorite(teacherId, userId) {
-  const teacherRef = ref(db, `favorites/${nanoid()}`);
+  const id = nanoid();
+  const teacherRef = ref(db, `favorites/${id}`);
   try {
     await set(teacherRef, { teacherId, userId });
     console.log("Favorites teacher added successfully");
+    return { teacherId, userId, id };
   } catch (error) {
     console.error("Error adding teacher: ", error);
   }
