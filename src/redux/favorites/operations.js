@@ -7,11 +7,13 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchFavorite = createAsyncThunk(
   "favorite/fetchAll",
   async (params, thunkAPI) => {
+    console.log("start");
     try {
       const response = await getTeachersFavorite(params.userId, params.filters);
       console.log(response);
       return response;
     } catch (error) {
+      console.log(error);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -35,11 +37,11 @@ export const addFavorite = createAsyncThunk(
 
 export const deleteFavorite = createAsyncThunk(
   "favorite/deleteFavorite",
-  async (params, thunkAPI) => {
+  async (favoritesId, thunkAPI) => {
     try {
-      const response = await deleteTeacher(params.favoritesId);
-      console.log(response);
-      return response;
+      await deleteTeacher(favoritesId);
+
+      return favoritesId;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

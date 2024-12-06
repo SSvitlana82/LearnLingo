@@ -4,11 +4,11 @@ import { createSelector } from "@reduxjs/toolkit";
 export const selectFavoriteState = (state) => state.favorite;
 
 // Selector to get the list of teacher items
-export const selectfFavoriteItems = (state) => state.favorite.items;
+export const selectFavoriteItems = (state) => state.favorite.items;
 
 // Selector to get the loading status
 export const selectFavoriteLoading = createSelector(
-  selectFAvoriteState,
+  selectFavoriteState,
   (state) => state.favorite.isLoading
 );
 

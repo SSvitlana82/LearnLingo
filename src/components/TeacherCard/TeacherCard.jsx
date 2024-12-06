@@ -7,7 +7,6 @@ import { FaStar } from "react-icons/fa6";
 import Heart from "../Heart/Heart";
 
 const TeacherCard = ({ data }) => {
-  console.log(data);
   const [isOpened, setIsOpened] = useState(false);
   const toggle = () => {
     setIsOpened(!isOpened);
@@ -32,7 +31,7 @@ const TeacherCard = ({ data }) => {
               Rating: {data.rating}
             </p>
             <p>Price / 1 hour: {data.price_per_hour}$</p>
-            <Heart data={data} /> // TODO для того щоб взяти id
+            <Heart data={data} />
           </div>
         </div>
         <div>

@@ -4,7 +4,6 @@ import { FaStar } from "react-icons/fa6";
 import Avatar from "react-avatar";
 
 const ReviewsItem = ({ data }) => {
-  /* console.log(data); */
   return (
     <div>
       <div>

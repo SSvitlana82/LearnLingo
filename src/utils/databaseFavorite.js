@@ -20,7 +20,7 @@ export async function addTeacherFavorite(teacherId, userId) {
   const id = nanoid();
   const teacherRef = ref(db, `favorites/${id}`);
   try {
-    await set(teacherRef, { teacherId, userId });
+    await set(teacherRef, { teacherId, userId, id });
     console.log("Favorites teacher added successfully");
     return { teacherId, userId, id };
   } catch (error) {

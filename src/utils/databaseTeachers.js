@@ -84,6 +84,29 @@ export async function getTeachers({
     throw new Error("Failed to fetch data: " + error.message);
   }
 }
+export async function getTeacherById(idTeacher) {
+  const dbRef = ref(db, `teachers/${idTeacher}`);
+  try {
+    let teacherQuery = query(dbRef);
+    const snapshot = await get(teacherQuery);
+    if (snapshot.exists()) {
+      const teacher = snapshot.val();
+
+      return teacher;
+    } else {
+      throw new Error("No data available");
+    }
+  } catch (error) {
+    throw new Error("Failed to fetch data: " + error.message);
+  }
+}
+export async function getTeachersById(arrayIdTeachers) {
+  const promises = arrayIdTeachers.map((idTeacher) => {
+    return getTeacherById(idTeacher);
+  });
+
+  return await Promise.all(promises);
+}
 
 // Example usage:
 

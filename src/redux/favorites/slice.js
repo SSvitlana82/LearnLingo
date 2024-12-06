@@ -37,8 +37,9 @@ const favoriteSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = state.items.filter((item) => {
-          return item.id !== action.payload.id;
+          return item.id !== action.payload;
         });
+        console.log(state.items);
       })
       .addCase(deleteFavorite.pending, fetchIsLoading)
       .addCase(deleteFavorite.rejected, fetchError);
