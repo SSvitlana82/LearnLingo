@@ -19,6 +19,7 @@ import {
 export async function addTeacherFavorite(teacherId, userId) {
   const id = nanoid();
   const teacherRef = ref(db, `favorites/${id}`);
+  console.log(teacherId);
   try {
     await set(teacherRef, { teacherId, userId, id });
     console.log("Favorites teacher added successfully");
@@ -61,7 +62,7 @@ export async function getTeachersFavorite(
 
 // DELETE: Function to delete a teacher
 export async function deleteTeacher(favoritesId) {
-  const teacherRef = ref(db, `teachers/${favoritesId}`);
+  const teacherRef = ref(db, `favorites/${favoritesId}`);
   try {
     await remove(teacherRef);
     console.log("Teacher removed successfully");

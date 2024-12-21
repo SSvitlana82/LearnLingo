@@ -14,12 +14,12 @@ const FavoritPage = ({}) => {
   useEffect(() => {
     async function fetchData() {
       const data = await getTeachersById(idFavorites);
-
+      console.log(data);
       setData(data);
     }
 
     fetchData();
-  }, []);
+  }, [favorites]);
 
   return (
     <div className={css.list}>

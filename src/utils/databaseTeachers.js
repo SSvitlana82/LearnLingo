@@ -101,8 +101,9 @@ export async function getTeacherById(idTeacher) {
   }
 }
 export async function getTeachersById(arrayIdTeachers) {
-  const promises = arrayIdTeachers.map((idTeacher) => {
-    return getTeacherById(idTeacher);
+  const promises = arrayIdTeachers.map(async (idTeacher) => {
+    const teacher = await getTeacherById(idTeacher);
+    return { ...teacher, id: idTeacher };
   });
 
   return await Promise.all(promises);

@@ -31,6 +31,12 @@ const authSlice = createSlice({
     isLoggedIn: false,
     isLoading: false,
   },
+  reducers: {
+    logginUser: (state, { payload }) => {
+      state.user = payload;
+      state.isLoggedIn = true;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(userSignUp.fulfilled, (state, action) => {
@@ -58,3 +64,4 @@ const authSlice = createSlice({
   },
 });
 export const authReducer = authSlice.reducer;
+export const { logginUser } = authSlice.actions;
