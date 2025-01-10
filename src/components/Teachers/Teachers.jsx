@@ -3,6 +3,7 @@ import { useState } from "react";
 import TeacherCard from "../TeacherCard/TeacherCard";
 
 const Teachers = ({ teachers }) => {
+  console.log(teachers);
   return (
     <div className={css.list}>
       <ul className={css.list}>

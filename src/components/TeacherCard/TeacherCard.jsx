@@ -5,6 +5,7 @@ import ReviewsList from "../ReviewsItem/ReviewsList/ReviewsList";
 import { IoBookOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa6";
 import Heart from "../Heart/Heart";
+import ModalForm from "../ModalForm/ModalForm";
 
 const TeacherCard = ({ data }) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -56,7 +57,9 @@ const TeacherCard = ({ data }) => {
             {!isOpened && <p onClick={toggle}>Read more</p>}
           </div>
         </div>
-        <div></div>
+        <div>
+          <ModalForm />
+        </div>
       </div>
     </div>
   );

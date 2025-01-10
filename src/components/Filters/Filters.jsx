@@ -1,4 +1,5 @@
 import SelectorLangauge from "../SelectorLangauge/SelectorLangauge";
+import SelectorLevel from "../SelectorLevel/SelectorLevel";
 import style from "./Filters.module.css";
 import { useState } from "react";
 
@@ -25,7 +26,7 @@ const Filters = ({}) => {
         onChange={(e) => setMaxPrice(Number(e.target.value))}
       />
       {/*  <button onClick={handlePriceFilter}>Filter</button> */}
-      Filters
+      <SelectorLevel onSelect={() => {}} />
     </div>
   );
 };
